@@ -1,5 +1,9 @@
 # prd-writer
 
+> **A conversational PRD-writing skill for Claude Code.** It interviews you from the user, business, and technical angles, aligns on a concise concept doc, then produces an implementation-ready Chinese PRD — flows, states, fields, copy, and edge cases included.
+>
+> **一个会「带你聊」的 Claude Code 写 PRD 技能。** 从用户、业务、技术三个视角访谈，先对齐一版精简概念稿，再产出可直接落地的中文 PRD —— 流程、状态、字段、文案、异常一应俱全。
+
 一个 Claude Code 技能（skill）：引导式产品需求发现对话，分阶段产出标准中文 PRD 文档。
 
 它不会一上来就甩给你一份完整 PRD，而是先从**用户 / 业务 / 技术**三个视角做诊断，确认页面结构与导航，输出一份简洁的**概念 PRD** 与你对齐、冻结范围，再生成包含流程、状态、字段、文案与异常处理的**落地版 PRD**。
