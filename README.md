@@ -12,7 +12,7 @@
 
 ## 安装
 
-### 通用方式：一行命令（推荐，需已装 Node）
+一行命令（终端，需已装 Node）：
 
 ```
 npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
@@ -24,16 +24,7 @@ npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
 npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer --agent '*'
 ```
 
-### 可选：Claude Code 插件方式
-
-如果你用的是 Claude Code，也可以走它内置的插件系统（无需 Node）：
-
-```
-/plugin marketplace add Panix22/prd-writer-skill
-/plugin install prd-writer@prd-writer-skill
-```
-
-第一条把本仓库登记为插件市场（marketplace），第二条从中安装 `prd-writer`。好处是支持 `/plugin update` 一键升级、`/plugin uninstall` 卸载。安装后重启或重新加载会话即可使用。
+> 仓库里只有一个 skill，所以 `--skill prd-writer` 也可省略，直接 `npx skills add https://github.com/Panix22/prd-writer-skill` 即可。
 
 ## 使用
 
@@ -89,35 +80,19 @@ npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer --
 
 ## 更新 / 卸载
 
-通用方式（任意 agent）：
-
 ```
 npx skills update prd-writer        # 更新
 npx skills remove prd-writer        # 卸载
-```
-
-Claude Code 插件方式：
-
-```
-/plugin update prd-writer@prd-writer-skill
-/plugin uninstall prd-writer@prd-writer-skill
 ```
 
 ## 目录结构
 
 ```
 prd-writer-skill/
-├── .claude-plugin/
-│   └── marketplace.json          # 市场清单
-└── plugins/
-    └── prd-writer/
-        ├── .claude-plugin/
-        │   └── plugin.json       # 插件清单
-        └── skills/
-            └── prd-writer/
-                ├── SKILL.md      # 技能主体
-                └── references/
-                    └── prd-template.md
+└── prd-writer/
+    ├── SKILL.md              # 技能主体
+    └── references/
+        └── prd-template.md  # 落地版 PRD 模板
 ```
 
 ## License
