@@ -8,6 +8,18 @@
 
 ## 安装
 
+两种方式任选其一。
+
+### 方式一：一行命令（终端，需已装 Node）
+
+```
+npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
+```
+
+借助 [`skills`](https://www.npmjs.com/package/skills) 工具一行装好，自动放进你的 skills 目录。
+
+### 方式二：Claude Code 官方插件（无需任何额外工具）
+
 在 Claude Code 里依次执行：
 
 ```
@@ -15,7 +27,7 @@
 /plugin install prd-writer@prd-writer-skill
 ```
 
-第一条命令把本仓库注册为一个插件市场（marketplace），第二条从中安装 `prd-writer` 插件。安装后重启或重新加载会话即可使用。
+第一条把本仓库登记为插件市场（marketplace），第二条从中安装 `prd-writer`。好处是支持 `/plugin update` 一键升级、`/plugin uninstall` 卸载。安装后重启或重新加载会话即可使用。
 
 ## 使用
 
