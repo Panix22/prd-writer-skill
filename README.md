@@ -1,10 +1,10 @@
 # prd-writer
 
-> **A conversational PRD-writing skill for Claude Code.** It interviews you from the user, business, and technical angles, aligns on a concise concept doc, then produces an implementation-ready Chinese PRD — flows, states, fields, copy, and edge cases included.
+> **A conversational PRD-writing Agent Skill.** It interviews you from the user, business, and technical angles, aligns on a concise concept doc, then produces an implementation-ready Chinese PRD — flows, states, fields, copy, and edge cases included. Works with any agent that supports the [Agent Skill](https://www.npmjs.com/package/skills) format — Claude Code, Codex, Hermes, OpenClaw, and more.
 >
-> **一个会「带你聊」的 Claude Code 写 PRD 技能。** 从用户、业务、技术三个视角访谈，先对齐一版精简概念稿，再产出可直接落地的中文 PRD —— 流程、状态、字段、文案、异常一应俱全。
+> **一个会「带你聊」的写 PRD 技能（Agent Skill）。** 从用户、业务、技术三个视角访谈，先对齐一版精简概念稿，再产出可直接落地的中文 PRD —— 流程、状态、字段、文案、异常一应俱全。支持任何兼容 Agent Skill 格式的助手 —— Claude Code、Codex、Hermes、OpenClaw 等。
 
-一个 Claude Code 技能（skill）：引导式产品需求发现对话，分阶段产出标准中文 PRD 文档。
+一个通用的 Agent 技能（skill）：引导式产品需求发现对话，分阶段产出标准中文 PRD 文档。不绑定特定工具，凡是支持 skills 的 AI 助手都能用。
 
 它不会一上来就甩给你一份完整 PRD，而是先从**用户 / 业务 / 技术**三个视角做诊断，确认页面结构与导航，输出一份简洁的**概念 PRD** 与你对齐、冻结范围，再生成包含流程、状态、字段、文案与异常处理的**落地版 PRD**。
 
@@ -12,19 +12,21 @@
 
 ## 安装
 
-两种方式任选其一。
-
-### 方式一：一行命令（终端，需已装 Node）
+### 通用方式：一行命令（推荐，需已装 Node）
 
 ```
 npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
 ```
 
-借助 [`skills`](https://www.npmjs.com/package/skills) 工具一行装好，自动放进你的 skills 目录。
+借助 [`skills`](https://www.npmjs.com/package/skills) 工具一行装好，它会自动识别你正在用的 agent（Claude Code、Codex、Hermes、OpenClaw 等）并装到对应的 skills 目录。想一次性装给所有 agent，可加 `--agent '*'`：
 
-### 方式二：Claude Code 官方插件（无需任何额外工具）
+```
+npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer --agent '*'
+```
 
-在 Claude Code 里依次执行：
+### 可选：Claude Code 插件方式
+
+如果你用的是 Claude Code，也可以走它内置的插件系统（无需 Node）：
 
 ```
 /plugin marketplace add Panix22/prd-writer-skill
@@ -35,7 +37,7 @@ npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
 
 ## 使用
 
-安装后直接对 Claude 描述你的产品想法，或显式触发：
+安装后直接对你的 AI 助手描述产品想法，或显式触发：
 
 ```
 /prd-writer
@@ -86,6 +88,15 @@ npx skills add https://github.com/Panix22/prd-writer-skill --skill prd-writer
 -->
 
 ## 更新 / 卸载
+
+通用方式（任意 agent）：
+
+```
+npx skills update prd-writer        # 更新
+npx skills remove prd-writer        # 卸载
+```
+
+Claude Code 插件方式：
 
 ```
 /plugin update prd-writer@prd-writer-skill
